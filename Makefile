@@ -1,4 +1,4 @@
-NAME = 
+NAME = push_swap
 
 SRC =  
 
@@ -25,6 +25,6 @@ save:
 	@git push
 
 main:
-	@cc -g push_swap.c $(NAME)
+	@cc -g main_push_swap.c $(NAME)
 
 .PHONY: all clean fclean re
