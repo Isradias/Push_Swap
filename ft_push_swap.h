@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/08 06:40:21 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/08 08:17:50 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 void	ft_error_handling(int argc, char **argv);
 
 //Funções auxiliares de error
-int		ft_isdigit(int c); //Acho que não estou usando!!
 int		ft_strcmp(const char *s1, const char *s2);
 long    ft_atol(const char *str);
 
