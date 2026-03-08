@@ -6,9 +6,11 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:30:30 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/08 06:30:51 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/08 06:49:44 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_push_swap.h"
 
 int ft_strcmp(const char *s1, const char *s2)
 {

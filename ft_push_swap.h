@@ -6,14 +6,21 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/08 06:04:53 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/08 06:40:21 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH-SWAP_H
+#ifndef FT_PUSH_SWAP_H
 # define FT_PUSH_SWAP_H
 
+#include <stdlib.h>
 #include <stdio.h> /* Isso serve pro print, precisa tirar depois */
 
+void	ft_error_handling(int argc, char **argv);
+
+//Funções auxiliares de error
+int		ft_isdigit(int c); //Acho que não estou usando!!
+int		ft_strcmp(const char *s1, const char *s2);
+long    ft_atol(const char *str);
 
 #endif
