@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icaldas- <icaldas-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 07:52:48 by icaldas-          #+#    #+#             */
-/*   Updated: 2025/11/24 21:33:02 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/08 06:31:09 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static long int	ft_isnegative(char c)
+static long	ft_isnegative(char c)
 {
 	if (c == '-')
 		return (-1);
@@ -20,7 +18,7 @@ static long int	ft_isnegative(char c)
 		return (1);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
 	long int	i;
 	long int	nb;
@@ -43,5 +41,5 @@ int	ft_atoi(const char *str)
 		if (buffer > nb && sign == -1)
 			return (0);
 	}
-	return ((int)(nb * sign));
+	return (nb * sign);
 }

@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_push_swap.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icaldas- <icaldas-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 21:39:32 by icaldas-          #+#    #+#             */
-/*   Updated: 2025/11/26 22:40:20 by icaldas-         ###   ########.fr       */
+/*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
+/*   Updated: 2026/03/08 06:04:53 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PUSH-SWAP_H
+# define FT_PUSH_SWAP_H
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
-{
-	t_list	*aux;
+#include <stdio.h> /* Isso serve pro print, precisa tirar depois */
 
-	if (*lst == NULL || del == NULL)
-		return ;
-	while (*lst != NULL)
-	{
-		aux = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = aux;
-	}
-	lst = NULL;
-}
+
+#endif

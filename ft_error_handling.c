@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.c                                   :+:      :+:    :+:   */
+/*   ft_error_handling.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:46:01 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/06 12:59:18 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/08 06:24:00 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,19 @@
 static void ft_isint(int argc, char *argv[])
 {
 	long	nb;
-	long	negative;
-	int		i;
+	int		arg;
 
-	while (argc > 0)
+	nb = 0;
+	arg = 1;
+	while (arg <= argc)
 	{
-		nb = 0;
-		i = 0;
-		negative = 0;
-
-		if (argv[argc][0] == '-' || argv[argc][0] == '+')
-			i++;
-		if (argv[argc][0] == '-')
-			negative = 1;
-		while (argv[argc][i])
+		nb = ft_atol(argv[arg]);
+		if (nb < (long)INT_MIN || nb > (long)INT_MAX)
 		{
-			nb = 10 * nb + argv[argc][i] - '0';
-			if ((negative == 1 && nb * -1 < INT_MIN) || nb > INT_MIN)
-			{
-				ft_printf("Error\n");
-				exit(1);
-			}
-			i++;
+			printf("Error\n");
+			exit(1);
 		}
-		argc--;
+		arg++;
 	}
 }
 
@@ -55,12 +44,12 @@ static void	ft_isalldigit(int argc, char *argv[])
 		{
 			if (argv[arg][i] < '0' || argv[arg][i] > '9')
 			{
-				ft_printf("Error\n");
+				printf("Error\n");
 				exit(1);
 			}
 			i++;
 		}
-		*argv++;
+		arg++;
 	}
 }
 
@@ -91,7 +80,7 @@ static void ft_matrixcmp(int argc, char *argv[])
 				i++;
 			if (argv[arg1][i] == argv[arg2][i])
 			{
-				ft_printf("Error\n");
+				printf("Error\n");
 				exit(1);
 			}
 			arg2++;
@@ -100,14 +89,21 @@ static void ft_matrixcmp(int argc, char *argv[])
 	}
 }
 
-void	error_handling(int argc, char *argv[])
+void	ft_error_handling(int argc, char *argv[])
 {
 	if (argc <= 1)
 	{
-		ft_printf("Error\n");
+		printf("Error\n"); /*Aqui precisa printar a mensagem?*/
 		exit(1);
 	}
-	ft_isalldigit(argc, *argv[]); /*TRodos os argumentos são números*/
-	ft_matrixcmp(argc, *argv[]); /*Verificar se todos os argumentos são diferentes entre si*/
-	ft_isint(argc, *argv[]);
+	ft_isalldigit(argc, *argv[]); /*Argumentos são números*/
+	ft_matrixcmp(argc, *argv[]); /*Argumentos são diferentes entre si*/
+	ft_isallint(argc, *argv[]); /*Argumentos são inteiros*/
+//	ft_isordered(argc, *argv[]); /*Argumentos estão ordenados
+}
+
+int	main(int argc, char *argv[])
+{
+	ft_error_handling(argc, &**argv);
+	printf("Argumentos válidos");
 }
