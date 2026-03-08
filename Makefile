@@ -35,7 +35,7 @@ fclean: clean
 # Recompilar tudo
 re: fclean all
 
-push:
+push: fclean
 	@git add .
 	@git commit -m "save"
 	@git push
