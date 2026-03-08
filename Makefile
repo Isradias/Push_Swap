@@ -27,6 +27,7 @@ push:
 pull:
 	@git fetch origin
 	@git reset --hard origin/main
+	@git clean -fd
 
 main:
 	@cc -g main_push_swap.c $(NAME)
