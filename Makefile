@@ -19,10 +19,14 @@ fclean: clean
 
 re: fclean all
 
-save:
+push:
 	@git add .
 	@git commit -m "save"
 	@git push
+
+pull:
+	@git fetch origin
+	@git reset --hard origin/main
 
 main:
 	@cc -g main_push_swap.c $(NAME)
