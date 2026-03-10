@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 18:56:52 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/08 19:52:32 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/10 10:24:31 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ int	*ft_arg_to_array(int argc, char **argv)
 	stack_a = malloc((argc - 1) * sizeof(int));
 	i = 0;
 	if (stack_a == NULL)
-	{
-		printf("Malloc error in ft_arg_to_array.\n"); //forbidden function
-		exit(1);
-	}
+		ft_error_message("Malloc error in ft_arg_to_array.\n");
 	while (i < argc - 1)
 	{
 		stack_a[i] = (int)ft_atol(argv[i + 1]);
@@ -31,3 +28,19 @@ int	*ft_arg_to_array(int argc, char **argv)
 	}
 	return (stack_a);
 }
+/*
+int	main(int argc, char **argv)
+{
+	int	*array;
+	int	i;
+
+	i = 0;
+	array = ft_arg_to_array(argc, argv);
+	while (i < argc - 1)
+	{
+		printf("%d", array[i]);
+		i++;
+	}
+	free(array);
+	return (0);
+}*/
