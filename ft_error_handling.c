@@ -6,13 +6,13 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:46:01 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/08 07:28:53 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/10 10:40:04 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static void ft_isallint(int argc, char *argv[])
+static void	ft_isallint(int argc, char *argv[])
 {
 	long	nb;
 	int		arg;
@@ -23,11 +23,7 @@ static void ft_isallint(int argc, char *argv[])
 	{
 		nb = ft_atol(argv[arg]);
 		if (nb < -2147483648 || nb > 2147483647)
-		{
-			printf("Error\n");
-			printf("Tem só inteiro\n");
-			exit(1);
-		}
+		ft_error_message("Error");
 		arg++;
 	}
 }
@@ -35,7 +31,7 @@ static void ft_isallint(int argc, char *argv[])
 static void	ft_isalldigit(int argc, char *argv[])
 {
 	int	arg;
-	int i;
+	int	i;
 
 	arg = 1;
 	while (arg < argc)
@@ -51,17 +47,13 @@ static void	ft_isalldigit(int argc, char *argv[])
 			if (argv[arg][i] >= '0' && argv[arg][i] <= '9')
 				i++;
 			else
-			{
-				printf("Error\n");
-				printf("Não tem só número\n");
-				exit(1);
-			}
+			ft_error_message("Error");
 		}
 		arg++;
 	}
 }
 
-static void ft_matrixcmp(int argc, char *argv[])
+static void	ft_matrixcmp(int argc, char *argv[])
 {
 	int	arg1;
 	int	arg2;
@@ -77,11 +69,7 @@ static void ft_matrixcmp(int argc, char *argv[])
 			while (argv[arg1][i] == argv[arg2][i] && argv[arg1][i])
 				i++;
 			if (argv[arg1][i] == argv[arg2][i])
-			{
-				printf("Error\n");
-				printf("Tem argumentos iguais\n");
-				exit(1);
-			}
+			ft_error_message("Error");
 			arg2++;
 		}
 		arg1++;
@@ -91,20 +79,15 @@ static void ft_matrixcmp(int argc, char *argv[])
 void	ft_error_handling(int argc, char **argv)
 {
 	if (argc <= 2)
-	{
-		printf("Error\n"); /*Aqui precisa printar a mensagem?*/
-		exit(1);
-	}
-	ft_isalldigit(argc, argv); /*Argumentos são números*/
-	ft_matrixcmp(argc, argv); /*Argumentos são diferentes entre si*/
-	ft_isallint(argc, argv); /*Argumentos são inteiros*/
-//	ft_isordered(argc, argv[]); /*Argumentos estão ordenados
+		ft_error_message("Error");
+	ft_isalldigit(argc, argv);
+	ft_matrixcmp(argc, argv);
+	ft_isallint(argc, argv);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	ft_error_handling(argc, argv);
 	printf("Argumentos válidos");
-
 	return (0);
-}
+}*/
