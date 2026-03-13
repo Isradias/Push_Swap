@@ -6,11 +6,30 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 18:56:52 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/10 10:24:31 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/12 22:51:38 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
+
+static void	ft_already_ordered(int argc, int *array)
+{
+	int	i;
+
+	i = 0;
+	while (i < argc - 2)
+	{
+		if (array[i] < array[i + 1])
+			i++;
+		else
+			break ;
+	}
+	if (i == argc - 2)
+	{
+		free(array);
+		exit(1);
+	}
+}
 
 int	*ft_arg_to_array(int argc, char **argv)
 {
@@ -26,6 +45,7 @@ int	*ft_arg_to_array(int argc, char **argv)
 		stack_a[i] = (int)ft_atol(argv[i + 1]);
 		i++;
 	}
+	ft_already_ordered(argc, stack_a);
 	return (stack_a);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 23:08:57 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/12 05:48:42 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/12 23:24:40 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,11 @@ static void	ft_put_index(t_stack **head, int *ordered_array)
 	(*aux)->index = i + 1;
 }
 
-static void	ft_put_position(t_stack **head)
-{
-	int		i;
-	t_stack	**aux;
-
-	i = 1;
-	aux = head;
-	while ((*aux)->next)
-	{
-		(*aux)->pos = i;
-		aux = &(*aux)->next;
-		i++;
-	}
-	(*aux)->pos = i;
-}
-
 t_stack *ft_array_to_list(int argc, int *unordered_array, int *ordered_array)
 {
-	int		i;
 	t_stack	*stack_a;
 	t_stack	*aux;
 
-	i = 0;
 	stack_a = ft_lstnew(unordered_array[argc - 2]);
 	argc--;
 	while (0 <= argc - 2)
@@ -65,9 +47,11 @@ t_stack *ft_array_to_list(int argc, int *unordered_array, int *ordered_array)
 	}
 	ft_put_position(&stack_a);
 	ft_put_index(&stack_a, ordered_array);
+	free(unordered_array);
+	free(ordered_array);
 	return (stack_a);
 }
-
+/*
 int	main(void)
 {
 	t_stack	*stack_a;
@@ -89,4 +73,4 @@ int	main(void)
 	printf("Pos: %d\n", aux->pos);
 	printf("Index: %d\n", aux->index);
 	return (0);
-}
+}*/
