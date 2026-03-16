@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/16 06:08:07 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/16 09:34:39 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,9 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_ra(t_stack **stack_a);
 void	ft_rb(t_stack **stack_b);
 void	ft_rr(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_rra(t_stack **stack_a);
+void	ft_rrb(t_stack **stack_b);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
