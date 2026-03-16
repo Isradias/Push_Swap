@@ -19,10 +19,11 @@ $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@chmod 755 $(NAME)
 	@echo "Wildcard está sendo utilizado, verificar norma."
+	@echo "Flag do debbuger sendo utilizada."
 
 # Como compilar arquivos .c em .o
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ -g
 
 # Limpar arquivos objeto
 clean:

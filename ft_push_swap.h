@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/12 23:23:01 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/16 06:08:07 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,13 @@ int		*ft_arg_to_array(int argc, char **argv);
 t_stack	*ft_array_to_list(int argc, int *unordered_array, int *ordered_array);
 int		*ft_bubble_sort(int argc, int *array);
 void	ft_put_position(t_stack **head);
+
+void	ft_sa(t_stack **stack_a);
+void	ft_sb(t_stack **stack_b);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b);
+
+void	ft_ra(t_stack **stack_a);
+void	ft_rb(t_stack **stack_b);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
