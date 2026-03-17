@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_position.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: icaldas- <icaldas-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 21:56:50 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/17 02:20:53 by icaldas-         ###   ########.fr       */
+/*   Created: 2025/11/05 19:53:56 by icaldas-          #+#    #+#             */
+/*   Updated: 2026/03/17 01:31:42 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_put_position(t_stack **head)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	t_stack	**aux;
+	int	i;
 
-	if (!*head)
-		return ;
-	i = 1;
-	aux = head;
-	while ((*aux)->next)
+	i = 0;
+	if (s != NULL)
 	{
-		(*aux)->pos = i;
-		aux = &(*aux)->next;
-		i++;
+		while (s[i] != '\0')
+		{
+			write (fd, &s[i], 1);
+			i++;
+		}
 	}
-	(*aux)->pos = i;
 }

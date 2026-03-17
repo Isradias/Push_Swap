@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:46:01 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/10 10:40:04 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/17 02:39:23 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_isallint(int argc, char *argv[])
 	{
 		nb = ft_atol(argv[arg]);
 		if (nb < -2147483648 || nb > 2147483647)
-		ft_error_message("Error");
+			ft_error_message("Error\n");
 		arg++;
 	}
 }
@@ -47,7 +47,7 @@ static void	ft_isalldigit(int argc, char *argv[])
 			if (argv[arg][i] >= '0' && argv[arg][i] <= '9')
 				i++;
 			else
-			ft_error_message("Error");
+				ft_error_message("Error\n");
 		}
 		arg++;
 	}
@@ -69,7 +69,7 @@ static void	ft_matrixcmp(int argc, char *argv[])
 			while (argv[arg1][i] == argv[arg2][i] && argv[arg1][i])
 				i++;
 			if (argv[arg1][i] == argv[arg2][i])
-			ft_error_message("Error");
+				ft_error_message("Error\n");
 			arg2++;
 		}
 		arg1++;
@@ -79,7 +79,7 @@ static void	ft_matrixcmp(int argc, char *argv[])
 void	ft_error_handling(int argc, char **argv)
 {
 	if (argc <= 2)
-		ft_error_message("Error");
+		ft_error_message("Error\n");
 	ft_isalldigit(argc, argv);
 	ft_matrixcmp(argc, argv);
 	ft_isallint(argc, argv);

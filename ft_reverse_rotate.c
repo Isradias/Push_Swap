@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 09:03:27 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/16 09:51:24 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/17 02:58:28 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_rra(t_stack **stack_a)
 		temp = temp->next;
 	temp->next = NULL;
 	ft_put_position(stack_a);
-	ft_printf("ra");
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	ft_rrb(t_stack **stack_b)
@@ -41,7 +41,7 @@ void	ft_rrb(t_stack **stack_b)
 		temp = temp->next;
 	temp->next = NULL;
 	ft_put_position(stack_b);
-	ft_printf("rb");
+	ft_putstr_fd("rrb\n", 1);
 }
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
@@ -66,5 +66,5 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
 		temp = temp->next;
 	temp->next = NULL;
 	ft_put_position(stack_b);
-	ft_printf("rrr\n");
+	ft_putstr_fd("rrr\n", 1);
 }

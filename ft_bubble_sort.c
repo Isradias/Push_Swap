@@ -6,13 +6,13 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 18:44:23 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/10 10:41:07 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/17 02:42:16 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-static int		*ft_array_cpy(int argc, int *array)
+static int	*ft_array_cpy(int argc, int *array)
 {
 	int	*cpy;
 	int	i;
@@ -41,7 +41,7 @@ static void	ft_swap_array(int *a, int *b)
 int	*ft_bubble_sort(int argc, int *array)
 {
 	int	i;
-	int j;
+	int	j;
 	int	*ordered;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 23:08:57 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/12 23:24:40 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/17 02:34:21 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	ft_put_index(t_stack **head, int *ordered_array)
 	(*aux)->index = i + 1;
 }
 
-t_stack *ft_array_to_list(int argc, int *unordered_array, int *ordered_array)
+t_stack	*ft_array_to_list(int argc, int *unordered_array, int *ordered_array)
 {
 	t_stack	*stack_a;
 	t_stack	*aux;

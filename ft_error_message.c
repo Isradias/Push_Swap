@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 19:15:23 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/10 09:49:55 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/17 02:37:42 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_error_message(char *str)
 {
-	printf("%s\n", str); //Forbidden function
+	ft_putstr_fd(str, 2);
 	exit(1);
 }
