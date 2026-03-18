@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:10 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/17 02:58:43 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/18 01:19:06 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ int	main(int argc, char **argv)
 	int *unordered;
 	int *ordered;
 	t_stack *stack_a;
-	t_stack *stack_b;
+//	t_stack *stack_b;
 	t_stack *aux;
 
 	ft_error_handling(argc, argv);
 	unordered = ft_arg_to_array(argc, argv);
 	ordered = ft_bubble_sort(argc, unordered);
 	stack_a = ft_array_to_list(argc, unordered, ordered);
-	stack_b = NULL;
+//	stack_b = NULL;
 
-
+/*
 	ft_print_list(stack_a);
 	ft_sa(&stack_a);
 	ft_print_list(stack_a);
@@ -49,14 +49,16 @@ int	main(int argc, char **argv)
 	ft_rra(&stack_a);
 	ft_print_list(stack_a);
 
-//	ft_print_list(stack_a);
+	ft_print_list(stack_a);
 	ft_pb(&stack_a, &stack_b);
 	ft_print_list(stack_a);
 	ft_sa(&stack_a);
 	ft_print_list(stack_a);
 	ft_pa(&stack_a, &stack_b);
 	ft_print_list(stack_a);
-
+*/
+	ft_simple_sort(&stack_a);
+	ft_print_list(stack_a);
 	while (stack_a)
 	{
 		aux = stack_a->next;
