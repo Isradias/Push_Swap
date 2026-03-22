@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:26 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/18 01:16:24 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:29:57 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b);
 void	ft_simple_sort(t_stack **stack_a);
+int		ft_list_len(t_stack *head);
+void	ft_free_list(t_stack *stack_a);
 
 #endif

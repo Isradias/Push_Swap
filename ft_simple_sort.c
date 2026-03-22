@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/17 23:09:45 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/18 01:24:01 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:42:45 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 static void	ft_sort_three(t_stack **stack_a, int a, int b, int c)
 {
-	if (a < b && a < c)
+	if (a < b)
 	{
+		if (b < c)
+			return ;
 		ft_rra(stack_a);
 		ft_sa(stack_a);
 	}

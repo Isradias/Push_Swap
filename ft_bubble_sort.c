@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 18:44:23 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/17 02:42:16 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:26:19 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,3 @@ int	*ft_bubble_sort(int argc, int *array)
 	}
 	return (ordered);
 }
-/*
-int	main(void)
-{
-	int array[] = {1, 4, 2, 8, 7, 6};
-	int	*ordered;
-	int	i;
-
-	ordered = ft_bubble_sort(7, array);
-	i = 0;
-	while (i < 7 - 1)
-	{
-		printf("%d", ordered[i]);
-		i++;
-	}
-	free(ordered);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/06 08:46:01 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/17 02:39:23 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:25:45 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,3 @@ void	ft_error_handling(int argc, char **argv)
 	ft_matrixcmp(argc, argv);
 	ft_isallint(argc, argv);
 }
-/*
-int	main(int argc, char **argv)
-{
-	ft_error_handling(argc, argv);
-	printf("Argumentos válidos");
-	return (0);
-}*/

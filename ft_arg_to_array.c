@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 18:56:52 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/12 22:51:38 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/22 13:26:40 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,3 @@ int	*ft_arg_to_array(int argc, char **argv)
 	ft_already_ordered(argc, stack_a);
 	return (stack_a);
 }
-/*
-int	main(int argc, char **argv)
-{
-	int	*array;
-	int	i;
-
-	i = 0;
-	array = ft_arg_to_array(argc, argv);
-	while (i < argc - 1)
-	{
-		printf("%d", array[i]);
-		i++;
-	}
-	free(array);
-	return (0);
-}*/
