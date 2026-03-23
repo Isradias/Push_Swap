@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_position.c                                  :+:      :+:    :+:   */
+/*   ft_labs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 21:56:50 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/22 23:47:31 by icaldas-         ###   ########.fr       */
+/*   Created: 2026/03/23 02:48:45 by icaldas-          #+#    #+#             */
+/*   Updated: 2026/03/23 02:51:11 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_push_swap.h"
-
-void	ft_put_position(t_stack **head)
+long	ft_labs(int nb);
 {
-	int		i;
-	t_stack	**aux;
+	long	abs;
 
-	if (!*head)
-		return ;
-	i = 0;
-	aux = head;
-	while ((*aux)->next)
-	{
-		(*aux)->pos = i;
-		aux = &(*aux)->next;
-		i++;
-	}
-	(*aux)->pos = i;
+	abs = nb;
+	if (abs < 0)
+		abs * -1;
+	return (abs);
 }
