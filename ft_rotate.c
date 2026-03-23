@@ -6,13 +6,13 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 05:31:50 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/17 02:25:57 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/23 03:32:24 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
-void	ft_ra(t_stack **stack_a)
+int	ft_ra(t_stack **stack_a)
 {
 	t_stack		*temp;
 
@@ -25,9 +25,10 @@ void	ft_ra(t_stack **stack_a)
 	temp->next = NULL;
 	ft_put_position(stack_a);
 	ft_putstr_fd("ra\n", 1);
+	return (1);
 }
 
-void	ft_rb(t_stack **stack_b)
+int	ft_rb(t_stack **stack_b)
 {
 	t_stack		*temp;
 
@@ -40,9 +41,10 @@ void	ft_rb(t_stack **stack_b)
 	temp->next = NULL;
 	ft_put_position(stack_b);
 	ft_putstr_fd("rb\n", 1);
+	return (1);
 }
 
-void	ft_rr(t_stack **stack_a, t_stack **stack_b)
+int	ft_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack		*temp;
 
@@ -63,4 +65,5 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b)
 	temp->next = NULL;
 	ft_put_position(stack_b);
 	ft_putstr_fd("rr\n", 1);
+	return (1);
 }

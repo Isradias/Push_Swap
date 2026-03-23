@@ -6,16 +6,16 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 02:48:45 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/23 02:51:11 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/23 03:34:48 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_labs(int nb);
+long	ft_labs(int nb)
 {
 	long	abs;
 
 	abs = nb;
 	if (abs < 0)
-		abs * -1;
+		abs *= -1;
 	return (abs);
 }

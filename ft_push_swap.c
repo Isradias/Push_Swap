@@ -6,7 +6,7 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:10 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/23 03:24:09 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/23 03:50:18 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,22 +72,28 @@ static t_stack	*ft_find_cheaper(t_stack *stack_b)
 	return (aux);
 }
 
-static void	ft_rotate_and_push(t_stack *to_pa)
+static void	ft_to_pa(t_stack *to_pa, t_stack **stack_a, t_stack **stack_b)
 {
-		while (to_pa->cost_a != 0 && to_pa->cost_b != 0)
+		while (to_pa->cost_a != 0 || to_pa->cost_b != 0)
 		{
 			if (to_pa->cost_a > 0 && to_pa->cost_b > 0)
-				ft_rr(stack_a, stack_b);
+			{
+				to_pa->cost_a--;
+				to_pa->cost_b -= ft_rr(stack_a, stack_b);
+			}
 			else if (to_pa->cost_a < 0 && to_pa->cost_b < 0)
-				ft_rrr(stack_a, stack_b);
-			else if (to_pa->cost_a > 0);
-				ft_ra(stack_a);
-			else if (to_pa->cost_a < 0);
-				ft_rra(stack_a);
-			else if (to_pa->cost_b > 0);
-				ft_rb(stack_b);
-			else (to_pa->cost_b < 0);
-				ft_rrb(stack_b);
+			{
+				to_pa->cost_a++;
+				to_pa->cost_b += ft_rrr(stack_a, stack_b);
+			}
+			else if (to_pa->cost_a > 0)
+				to_pa->cost_a -= ft_ra(stack_a);
+			else if (to_pa->cost_a < 0)
+				to_pa->cost_a += ft_rra(stack_a);
+			else if (to_pa->cost_b > 0)
+				to_pa->cost_b -= ft_rb(stack_b);
+			else
+				to_pa->cost_b += ft_rrb(stack_b);
 		}
 		ft_pa(stack_a, stack_b);
 }
@@ -96,19 +102,19 @@ static void	ft_full_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*aux;
 
-	ft_pb_all(stack_a, stack_b, ft_list_len(stack_a));
+		ft_pb_all(stack_a, stack_b, ft_list_len(*stack_a));
 	if (*stack_b == NULL)
 		return ;
 	while (*stack_b)
 	{
 		ft_put_cost(stack_a, stack_b);
 		aux = ft_find_cheaper(*stack_b);
-		ft_rotate_and_push(to_pa);
+		ft_to_pa(aux, stack_a, stack_b);
 	}
 	aux = *stack_a;
 	while (aux->index != 1)
 		aux = aux->next;
-	if (aux->pos <= ft_list_len(stack_a) / 2)
+	if (aux->pos <= ft_list_len(*stack_a) / 2)
 	{
 		while ((*stack_a)->index != 1)
 			ft_ra(stack_a);
