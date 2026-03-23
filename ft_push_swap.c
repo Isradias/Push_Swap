@@ -6,14 +6,14 @@
 /*   By: icaldas- <icaldas-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 06:03:10 by icaldas-          #+#    #+#             */
-/*   Updated: 2026/03/23 03:50:18 by icaldas-         ###   ########.fr       */
+/*   Updated: 2026/03/23 04:06:07 by icaldas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
 
 #include <stdio.h> /*Printf aqui*/
-
+/*
 static void	ft_print_list(t_stack *list)
 {
 	while (list)
@@ -26,7 +26,7 @@ static void	ft_print_list(t_stack *list)
 		list = list->next;
 	}
 	printf("---------------------------------------\n\n");
-}
+}*/
 
 static void	ft_pb_all(t_stack **stack_a, t_stack **stack_b, int len_a)
 {
@@ -139,13 +139,13 @@ int	main(int argc, char **argv)
 	stack_a = ft_array_to_list(argc, unordered, ordered);
 	
 	ft_full_sort(&stack_a, &stack_b);
-
+	/*
 	printf("STACK_A:\n");
 	ft_print_list(stack_a);
 
 	printf("STACK_B:\n");
 	ft_print_list(stack_b);
-
+*/
 	ft_free_list(stack_a);
 	ft_free_list(stack_b);
 
